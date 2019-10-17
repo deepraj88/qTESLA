@@ -12,3 +12,4 @@ find * -name "*aps" | xargs git add
 find * -name "*directive" | xargs git add
 find * -name "*tcls" | xargs git add
 git add git_commands.sh
+git add README.md
