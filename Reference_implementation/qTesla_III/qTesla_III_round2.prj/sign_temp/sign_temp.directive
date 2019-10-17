@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile>
+    <directive functionName="ntt" label="" functionLabel="">
+      <pragma name="ALLOCATION">
+        <option name="instances" value="ntt" positionalBoolean="4"/>
+        <option name="limit" value="1"/>
+        <option name="function" value="" positionalBoolean="type"/>
+      </pragma>
+    </directive>
+    <directive functionName="ntt" label="" functionLabel="">
+      <pragma name="INLINE"/>
+    </directive>
+    <directive functionName="nttinv" label="" functionLabel="">
+      <pragma name="ALLOCATION">
+        <option name="instances" value="nttinv" positionalBoolean="4"/>
+        <option name="limit" value="1"/>
+        <option name="function" value="" positionalBoolean="type"/>
+      </pragma>
+    </directive>
+    <directive functionName="nttinv" label="" functionLabel="">
+      <pragma name="INLINE"/>
+    </directive>
+  </sourceFile>
+  <sourceFile name="poly.c">
+    <directive functionName="sparse_mul16" label="sparse_mul16_label1" functionLabel=" ">
+      <pragma name="PIPELINE"/>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>

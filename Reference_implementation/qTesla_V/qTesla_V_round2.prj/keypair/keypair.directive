@@ -1,0 +1,127 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="keccak_absorb" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="keccak_absorb" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="keccak_absorb" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="keccak_squeezeblocks" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="keccak_squeezeblocks" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="keccak_squeezeblocks" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="shake256" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="shake256" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="shake256" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="cshake128_simple" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="cshake128_simple" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="cshake128_simple" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="knuthMergeExchangeG" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="knuthMergeExchangeG" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="knuthMergeExchangeG" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="check_ES" label="check_ES_label0" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="check_ES" label="check_ES_label0" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="ntt" label="ntt_label1" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="ntt" label="ntt_label1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="nttinv" label="nttinv_label2" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="nttinv" label="nttinv_label2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label3" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label3" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label4" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label4" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label5" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label5" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label6" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label6" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label7" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label7" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label8" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="64"/>
+            </pragma>
+        </directive>
+        <directive functionName="kmxGauss" label="kmxGauss_label8" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

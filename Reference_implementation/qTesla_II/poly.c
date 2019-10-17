@@ -127,10 +127,11 @@ void nttInit()
 {
     // Find roots of unity:
     int32_t gamma = 2;
+    size_t i, j;
     while (gamma < PARAM_Q) {
         bool ok = true;
         int32_t v = gamma; // gamma^(2^0)
-        for (size_t i = 0; i <= PARAM_LGM; i++) { // v = gamma^(2^i)
+        for (i = 0; i <= PARAM_LGM; i++) { // v = gamma^(2^i)
             if (v == 1) {
                 ok = false;
                 break;
@@ -152,9 +153,9 @@ void nttInit()
     }
 
     // Prepare the bit-reversal table for lg(m)-bit integers
-    for (size_t i = 0; i < PARAM_M; i++) {
+    for (i = 0; i < PARAM_M; i++) {
         size_t v = i, r = 0;
-        for (size_t s = 0; s < PARAM_LGM; s++) {
+        nttInit_label0:for (size_t s = 0; s < PARAM_LGM; s++) {
             r = (r << 1) + (v & 1);
             v >>= 1;
         }
@@ -169,16 +170,16 @@ void nttInit()
     }
 
     t_tab[0] = 1;
-    for (size_t i = 1; i < 9; i++) {
+    for (i = 1; i < 9; i++) {
         t_tab[i] = MODQ((int64_t)t_tab[i - 1]*theta);
     }
 
     // Make a table psi_phi_tab[] of size n = 6*m such that psi_phi_tab[j] = gamma^(j mod m)*theta^(j div m) % q
     psi_phi_tab[0] = 1;
-    for (size_t j = 1; j < PARAM_M; j++) {
+    for (j = 1; j < PARAM_M; j++) {
         psi_phi_tab[j] = MODQ((int64_t)psi_phi_tab[j - 1]*gamma);
     }
-    for (size_t j = PARAM_M; j < PARAM_N; j++) {
+    for (j = PARAM_M; j < PARAM_N; j++) {
         psi_phi_tab[j] = MODQ((int64_t)psi_phi_tab[j & (PARAM_M - 1)]*t_tab[j >> PARAM_LGM]);
     }
 
@@ -186,10 +187,10 @@ void nttInit()
     int32_t gamma_inv = MODQ((int64_t)MODQ((int64_t)psi_phi_tab[PARAM_M - 1]*psi_phi_tab[PARAM_M - 1])*psi_phi_tab[1]); // gamma^-1 (mod q)
     int32_t t_inv_tab[6] = { 1, t_tab[8], t_tab[7], -t_tab[3], -t_tab[2], -t_tab[1] };
     iph_ips_tab[0] = MODQ((int64_t)(1 - t_tab[3])*(PARAM_Q - (PARAM_Q - 1)/(9*PARAM_M))); // scale
-    for (size_t j = 1; j < PARAM_M; j++) {
+    for (j = 1; j < PARAM_M; j++) {
         iph_ips_tab[j] = MODQ((int64_t)iph_ips_tab[j - 1]*gamma_inv);
     }
-    for (size_t j = PARAM_M; j < PARAM_N; j++) {
+    for (j = PARAM_M; j < PARAM_N; j++) {
         iph_ips_tab[j] = MODQ((int64_t)iph_ips_tab[j & (PARAM_M - 1)]*t_inv_tab[j >> PARAM_LGM]);
     }
 }
@@ -257,7 +258,7 @@ void NTT(int32_t A[], const int32_t a[])
     }
     // Apply the binary NTT to each of the six m-entry blocks:
     int32_t *Ao = A;
-    for (size_t o = 0; o < PARAM_N; o += PARAM_M) {
+    NTT_label1:for (size_t o = 0; o < PARAM_N; o += PARAM_M) {
         // bit-reverse copy:
         int32_t *Aao = Aa + o;
         for (size_t v = 0; v < PARAM_M; v++) {
@@ -295,7 +296,7 @@ void invNTT(int32_t a[], const int32_t A[])
     }
     // Apply the inverse binary NTT to each of the six m-entry blocks:
     int32_t *ao = a;
-    for (size_t o = 0; o < PARAM_N; o += PARAM_M) {
+    invNTT_label2:for (size_t o = 0; o < PARAM_N; o += PARAM_M) {
         // bit-reverse copy:
         int32_t *aAo = aA + o;
         for (size_t v = 0; v < PARAM_M; v++) {

@@ -34,7 +34,7 @@ static void store64(uint8_t *x, uint64_t u)
 {
   unsigned int i;
 
-  for (i = 0; i < 8; ++i) {
+  store64_label10:for (i = 0; i < 8; ++i) {
     x[i] = (uint8_t)u;
     u >>= 8;
   }
@@ -374,7 +374,7 @@ static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblock
   while(nblocks > 0) 
   {
     KeccakF1600_StatePermute(s);
-    for (i = 0; i < (r>>3); i++)
+    keccak_squeezeblocks_label9:for (i = 0; i < (r>>3); i++)
     {
       store64(h+8*i, s[i]);
     }
@@ -432,7 +432,7 @@ void cshake128_simple_absorb(uint64_t s[25], uint16_t cstm, const unsigned char 
 
   for (i = 0; i < 25; i++)
     s[i] = 0;
-
+#if 1
   /* Absorb customization (domain-separation) string */
   sep[0] = 0x01;
   sep[1] = 0xa8;
@@ -447,6 +447,7 @@ void cshake128_simple_absorb(uint64_t s[25], uint16_t cstm, const unsigned char 
 
   /* Absorb input */
   keccak_absorb(s, SHAKE128_RATE, in, inlen, 0x04);
+#endif
 }
 
 
@@ -474,6 +475,7 @@ void cshake128_simple(unsigned char *output, unsigned long long outlen, uint16_t
     for (i = 0; i < outlen%SHAKE128_RATE; i++)
       output[i] = t[i];
   }
+
 }
 
 

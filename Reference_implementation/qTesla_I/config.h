@@ -12,6 +12,9 @@
 #include <stddef.h>
 
 
+
+#define __LINUX__
+#define _X86_
 // Definition of compiler
 
 #define COMPILER_VC      1

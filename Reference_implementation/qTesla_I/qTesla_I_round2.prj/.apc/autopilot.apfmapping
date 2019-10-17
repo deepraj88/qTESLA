@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="aes.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/tests/aes.c"/>
+    <originFiles name="consts.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/consts.c"/>
+    <originFiles name="fips202.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/sha3/fips202.c"/>
+    <originFiles name="gauss.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/gauss.c"/>
+    <originFiles name="pack.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/pack.c"/>
+    <originFiles name="poly.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/poly.c"/>
+    <originFiles name="rng.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/tests/rng.c"/>
+    <originFiles name="sample.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/sample.c"/>
+    <originFiles name="sign.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/sign.c"/>
+  </source>
+  <testbench>
+    <originFiles name="newtest_sign.c" path="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/newtest_sign.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

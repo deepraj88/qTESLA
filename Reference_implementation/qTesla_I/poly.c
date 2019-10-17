@@ -63,7 +63,7 @@ void ntt(poly a, const poly w)
 { // Forward NTT transform
   int NumoProblems = PARAM_N>>1, jTwiddle=0;
 
-  for (; NumoProblems>0; NumoProblems>>=1) {
+  ntt_label1:for (; NumoProblems>0; NumoProblems>>=1) {
     int jFirst, j=0;
     for (jFirst=0; jFirst<PARAM_N; jFirst=j+NumoProblems) {
       sdigit_t W = (sdigit_t)w[jTwiddle++];
@@ -89,7 +89,7 @@ int32_t barr_reduce(int32_t a)
 void nttinv(poly a, const poly w)
 { // Inverse NTT transform
   int NumoProblems = 1, jTwiddle=0;
-  for (NumoProblems=1; NumoProblems<PARAM_N; NumoProblems*=2) {
+  nttinv_label2:for (NumoProblems=1; NumoProblems<PARAM_N; NumoProblems*=2) {
     int jFirst, j=0;
     for (jFirst = 0; jFirst<PARAM_N; jFirst=j+NumoProblems) {
       sdigit_t W = (sdigit_t)w[jTwiddle++];
@@ -189,17 +189,14 @@ void sparse_mul16(poly prod, const int16_t *s, const uint32_t pos_list[PARAM_H],
 {
   int i, j, pos;
   int16_t *t = (int16_t*)s;
-
   for (i=0; i<PARAM_N; i++)
     prod[i] = 0;
-
   for (i=0; i<PARAM_H; i++) {
-    pos = pos_list[i];
-    for (j=0; j<pos; j++) {
-        prod[j] = prod[j] - sign_list[i]*t[j+PARAM_N-pos];
-    }
-    for (j=pos; j<PARAM_N; j++) {
-        prod[j] = prod[j] + sign_list[i]*t[j-pos];
+    sparse_mul16_label2:for (j=0; j<PARAM_N; j++) {
+    	if(j<pos_list[i])
+    		prod[j] = prod[j] - sign_list[i]*t[j+PARAM_N-pos_list[i]];
+    	else
+            prod[j] = prod[j] + sign_list[i]*t[j-pos_list[i]];
     }
   }
 }
@@ -218,17 +215,15 @@ void sparse_mul16(poly prod, const int16_t *s, const uint32_t pos_list[PARAM_H],
 void sparse_mul32(poly prod, const int32_t *pk, const uint32_t pos_list[PARAM_H], const int16_t sign_list[PARAM_H])
 {
   int i, j, pos;
-
   for (i=0; i<PARAM_N; i++)
     prod[i] = 0;
-  
-  for (i=0; i<PARAM_H; i++) {
-    pos = pos_list[i];
-    for (j=0; j<pos; j++) {
-        prod[j] = prod[j] - sign_list[i]*pk[j+PARAM_N-pos];
-    }
-    for (j=pos; j<PARAM_N; j++) {
-        prod[j] = prod[j] + sign_list[i]*pk[j-pos];
+  sparse_mul32_label0:for (i=0; i<PARAM_H; i++) {
+    //pos = pos_list[i];
+    sparse_mul32_label1:for (j=0; j<PARAM_N; j++) {
+    	if(j<pos_list[i])
+    		prod[j] = prod[j] - sign_list[i]*pk[j+PARAM_N-pos_list[i]];
+    	else
+            prod[j] = prod[j] + sign_list[i]*pk[j-pos_list[i]];
     }
   }
 }

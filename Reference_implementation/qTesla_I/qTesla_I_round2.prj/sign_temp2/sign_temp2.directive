@@ -1,0 +1,74 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="keccak_absorb" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="keccak_absorb" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="keccak_absorb" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="keccak_squeezeblocks" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="keccak_squeezeblocks" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="keccak_squeezeblocks" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="cshake128_simple_absorb" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="cshake128_simple_absorb" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="cshake128_simple_absorb" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="load64" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="store64" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="shake128" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="shake128" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="shake128" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="ntt" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="ntt" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="ntt" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="nttinv" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="nttinv" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="function" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="nttinv" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="sparse_mul16" label="sparse_mul16_label2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

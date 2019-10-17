@@ -26,6 +26,7 @@ unsigned long long ctr_sign;
 void hash_H(unsigned char *c_bin, poly v, const unsigned char *hm)
 { // Hash-based function H to generate c'
   unsigned char t[PARAM_N+HM_BYTES];
+  int loop;
   int32_t mask, cL;
 
   for (int i=0; i<PARAM_N; i++) { 
@@ -39,7 +40,9 @@ void hash_H(unsigned char *c_bin, poly v, const unsigned char *hm)
     cL = ((cL-(1<<PARAM_D)) & mask) | (cL & ~mask);  
     t[i] = (unsigned char)((v[i] - cL) >> PARAM_D);      
   }  
-  memcpy(&t[PARAM_N], hm, HM_BYTES);
+  //memcpy(&t[PARAM_N], hm, HM_BYTES);
+  for(loop=0;loop<HM_BYTES;loop++)
+	  t[PARAM_N+loop] = hm[loop];
   SHAKE(c_bin, CRYPTO_C_BYTES, t, PARAM_N+HM_BYTES);
 }
 
@@ -113,7 +116,7 @@ static int check_ES(poly p, unsigned int bound)
     list[j] = Abs(p[j]);
 
   for (j=0; j<PARAM_H; j++) {
-    for (i=0; i<limit-1; i++) {
+    check_ES_label0:for (i=0; i<limit-1; i++) {
       // If list[i+1] > list[i] then exchange contents
       mask = (list[i+1] - list[i]) >> (RADIX32-1);  
       temp = (list[i+1] & mask) | (list[i] & ~mask);
@@ -139,7 +142,7 @@ static int check_ES(poly p, unsigned int bound)
 *              - unsigned char *sk: secret key
 * Returns:     0 for successful execution
 **********************************************************/
-int crypto_sign_keypair(unsigned char *pk, unsigned char *sk)
+int crypto_sign_keypair(unsigned char pk[CRYPTO_PUBLICKEYBYTES], unsigned char sk[CRYPTO_SECRETKEYBYTES])
 {
   unsigned char randomness[CRYPTO_RANDOMBYTES], randomness_extended[4*CRYPTO_SEEDBYTES];
   poly s, e, a, t;
@@ -193,13 +196,15 @@ int crypto_sign_keypair(unsigned char *pk, unsigned char *sk)
 *              - unsigned long long *smlen: signature length*
 * Returns:     0 for successful execution
 ***************************************************************/
-int crypto_sign(unsigned char *sm, unsigned long long *smlen, const unsigned char *m, unsigned long long mlen, const unsigned char* sk)
+int crypto_sign(unsigned char sm[MLEN+CRYPTO_BYTES], unsigned long long smlen[1], const unsigned char m[MLEN], unsigned long long mlen, const unsigned char sk[CRYPTO_SECRETKEYBYTES])
 {
   unsigned char c[CRYPTO_C_BYTES], randomness[CRYPTO_SEEDBYTES], randomness_input[CRYPTO_RANDOMBYTES+CRYPTO_SEEDBYTES+HM_BYTES], seeds[2*CRYPTO_SEEDBYTES];
   uint32_t pos_list[PARAM_H];
   int16_t sign_list[PARAM_H], s[PARAM_N], e[PARAM_N];
   poly y, v, Sc, Ec, z, a;
   int nonce = 0;  // Initialize domain separator for sampling y   
+  int loop;
+  int i;
 #ifdef DEBUG
   ctr_sign=0;
   rejwctr=0;
@@ -211,7 +216,9 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen, const unsigned cha
 
   // Get H(seed_y, r, H(m)) to sample y
   randombytes(randomness_input+CRYPTO_RANDOMBYTES, CRYPTO_RANDOMBYTES);
-  memcpy(randomness_input, &seeds[CRYPTO_SEEDBYTES], CRYPTO_SEEDBYTES);
+  //memcpy(randomness_input, &seeds[CRYPTO_SEEDBYTES], CRYPTO_SEEDBYTES);
+  for(loop=0;loop<CRYPTO_SEEDBYTES;loop++)
+	  randomness_input[loop]=seeds[CRYPTO_SEEDBYTES+loop];
   SHAKE(randomness_input+CRYPTO_RANDOMBYTES+CRYPTO_SEEDBYTES, HM_BYTES, m, mlen);
   SHAKE(randomness, CRYPTO_SEEDBYTES, randomness_input, CRYPTO_RANDOMBYTES+CRYPTO_SEEDBYTES+HM_BYTES);
   
@@ -269,13 +276,15 @@ int crypto_sign(unsigned char *sm, unsigned long long *smlen, const unsigned cha
 * Returns:     0 for valid signature
 *              <0 for invalid signature
 ************************************************************/
-int crypto_sign_open(unsigned char *m, unsigned long long *mlen, const unsigned char *sm, unsigned long long smlen, const unsigned char *pk)
+int crypto_sign_open(unsigned char m[MLEN], unsigned long long mlen[1], const unsigned char sm[MLEN+CRYPTO_BYTES], unsigned long long smlen, const unsigned char pk[CRYPTO_PUBLICKEYBYTES])
 {
   unsigned char c[CRYPTO_C_BYTES], c_sig[CRYPTO_C_BYTES], seed[CRYPTO_SEEDBYTES], hm[HM_BYTES];
   uint32_t pos_list[PARAM_H];
   int16_t sign_list[PARAM_H]; 
   int32_t pk_t[PARAM_N];
   poly w, z, a, Tc;
+  int loop;
+  unsigned char flag;
 
   if (smlen < CRYPTO_BYTES) return -1;
 
@@ -291,8 +300,16 @@ int crypto_sign_open(unsigned char *m, unsigned long long *mlen, const unsigned 
   hash_H(c_sig, w, hm);
 
   // Check if the calculated c matches c from the signature
-  if (memcmp(c, c_sig, CRYPTO_C_BYTES)) return -3;
-  
+  //if (memcmp(c, c_sig, CRYPTO_C_BYTES)) return -3;
+  flag = 0;
+  for(loop=0;loop<CRYPTO_C_BYTES;loop++) {
+	  if(c[loop] != c_sig[loop]) {
+		  flag = 1;
+		  break;
+	  }
+  }
+  if(flag == 1)
+	  return -3;
   *mlen = smlen-CRYPTO_BYTES;
   for (unsigned long long i = 0; i < *mlen; i++)
     m[i] = sm[CRYPTO_BYTES+i];

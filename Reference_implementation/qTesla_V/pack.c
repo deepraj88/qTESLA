@@ -13,6 +13,7 @@
 void encode_sk(unsigned char *sk, const poly s, const poly e, const unsigned char *seeds)
 { // Encode secret key sk
   unsigned int i, j=0;
+  int loop;
 
 #if PARAM_S_BITS==8 /* <= 8 bits per secret coefficient */
   for (i=0; i<PARAM_N; i++, j++) {
@@ -66,13 +67,17 @@ void encode_sk(unsigned char *sk, const poly s, const poly e, const unsigned cha
 #else
     #error "NOT IMPLEMENTED"
 #endif
-  memcpy(&sk[2*PARAM_S_BITS*PARAM_N/8], seeds, 2*CRYPTO_SEEDBYTES);
+  //memcpy(&sk[2*PARAM_S_BITS*PARAM_N/8], seeds, 2*CRYPTO_SEEDBYTES);
+  for(loop=0;loop<2*CRYPTO_SEEDBYTES;loop++)
+	  sk[2*PARAM_S_BITS*PARAM_N/8+loop]=seeds[loop];
+
 }
 
 
 void decode_sk(unsigned char *seeds, int16_t *s, int16_t *e, const unsigned char *sk)
 { // Decode secret key sk
   unsigned int i, j=0;
+  int loop;
 
 #if PARAM_S_BITS==8
   for (i=0; i<PARAM_N; i++, j++) {
@@ -122,7 +127,9 @@ void decode_sk(unsigned char *seeds, int16_t *s, int16_t *e, const unsigned char
 #else
     #error "NOT IMPLEMENTED"
 #endif
-  memcpy(seeds, &sk[2*PARAM_S_BITS*PARAM_N/8], 2*CRYPTO_SEEDBYTES);
+  //memcpy(seeds, &sk[2*PARAM_S_BITS*PARAM_N/8], 2*CRYPTO_SEEDBYTES);
+  for(loop=0;loop<2*CRYPTO_SEEDBYTES;loop++)
+	  seeds[loop] = sk[2*PARAM_S_BITS*PARAM_N/8+loop];
 }
 
 
@@ -231,7 +238,11 @@ void encode_pk(unsigned char *pk, const poly t, const unsigned char *seedA)
 #endif
     j += 32;
   }
-  memcpy(&pk[PARAM_N*PARAM_Q_LOG/8], seedA, CRYPTO_SEEDBYTES);
+  //memcpy(&pk[PARAM_N*PARAM_Q_LOG/8], seedA, CRYPTO_SEEDBYTES);
+  int loop;
+  for(loop=0;loop<CRYPTO_SEEDBYTES;loop++)
+	  pk[PARAM_N*PARAM_Q_LOG/8+loop]=seedA[loop];
+
 }
 
 
@@ -242,6 +253,7 @@ void decode_pk(int32_t *pk, unsigned char *seedA, const unsigned char *pk_in)
   unsigned int i, j=0;
   uint32_t *pt = (uint32_t*)pk_in;
   uint32_t *t = (uint32_t*)pk;
+  int loop;
 
   for (i=0; i<PARAM_N; i+=32) {
 #if PARAM_Q_LOG==23
@@ -373,7 +385,9 @@ void decode_pk(int32_t *pk, unsigned char *seedA, const unsigned char *pk_in)
 #endif
     j += PARAM_Q_LOG;
   }
-  memcpy(seedA, &pk_in[PARAM_N*PARAM_Q_LOG/8], CRYPTO_SEEDBYTES);
+  //memcpy(seedA, &pk_in[PARAM_N*PARAM_Q_LOG/8], CRYPTO_SEEDBYTES);
+  for(loop=0;loop<CRYPTO_SEEDBYTES;loop++)
+	  seedA[loop] = pk_in[PARAM_N*PARAM_Q_LOG/8+loop];
 }
 
 
@@ -382,6 +396,7 @@ void decode_pk(int32_t *pk, unsigned char *seedA, const unsigned char *pk_in)
 void encode_sig(unsigned char *sm, unsigned char *c, poly z)
 { // Encode signature sm
   unsigned int i, j=0;
+  int loop;
   uint32_t *t = (uint32_t*)z;
   uint32_t *pt = (uint32_t*)sm;
 
@@ -471,7 +486,9 @@ void encode_sig(unsigned char *sm, unsigned char *c, poly z)
 #else
     #error "NOT IMPLEMENTED"
 #endif
-  memcpy(&sm[PARAM_N*(PARAM_B_BITS+1)/8], c, CRYPTO_C_BYTES);
+  //memcpy(&sm[PARAM_N*(PARAM_B_BITS+1)/8], c, CRYPTO_C_BYTES);
+  for(loop=0;loop<CRYPTO_C_BYTES;loop++)
+	  sm[PARAM_N*(PARAM_B_BITS+1)/8+loop] = c[loop];
 }
 
 
@@ -479,6 +496,7 @@ void decode_sig(unsigned char *c, poly z, const unsigned char *sm)
 { // Decode signature sm
   unsigned int i, j=0;
   uint32_t *pt = (uint32_t*)sm;
+  int loop;
 
 #if (PARAM_B_BITS+1)==21
   for (i=0; i<PARAM_N; i+=32) {
@@ -584,5 +602,7 @@ void decode_sig(unsigned char *c, poly z, const unsigned char *sm)
 #else
     #error "NOT IMPLEMENTED"
 #endif
-  memcpy(c, &sm[PARAM_N*(PARAM_B_BITS+1)/8], CRYPTO_C_BYTES);
+  //memcpy(c, &sm[PARAM_N*(PARAM_B_BITS+1)/8], CRYPTO_C_BYTES);
+  for(loop=0;loop<CRYPTO_C_BYTES;loop++)
+	  c[loop] = sm[PARAM_N*(PARAM_B_BITS+1)/8+loop];
 }

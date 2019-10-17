@@ -191,25 +191,52 @@ static void knuthMergeExchangeG(int32_t a[/*n*/], size_t n)
 static void kmxGauss(int32_t z[/*CHUNK_SIZE*/], const unsigned char *seed, int nonce) 
 { // Generate CHUNK_SIZE samples from the normal distribution in constant-time
     sdigit_t sampk[(CHUNK_SIZE + CDT_ROWS)*CDT_COLS];
+    unsigned char sampk_temp[(CHUNK_SIZE + CDT_ROWS)*CDT_COLS*4];
     int32_t sampg[CHUNK_SIZE + CDT_ROWS];
+    int32_t i;
 
+    int loop;
+
+#if 1
     // Fill each entry's sorting key with uniformly random data, and append the CDT values
-    cSHAKE((uint8_t *)sampk, CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t), (int16_t)nonce, seed, CRYPTO_RANDOMBYTES);
-    memcpy(sampk + CHUNK_SIZE*CDT_COLS, cdt_v, CDT_ROWS*CDT_COLS*sizeof(sdigit_t));
+    cSHAKE(sampk_temp, CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t), (int16_t)nonce, seed, CRYPTO_RANDOMBYTES);
+    //memcpy(sampk + CHUNK_SIZE*CDT_COLS, cdt_v, CDT_ROWS*CDT_COLS*sizeof(sdigit_t));
+    kmxGauss_label3:for(loop=0;loop<CDT_ROWS*CDT_COLS;loop++){
+    	sampk_temp[CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t)+loop*4]= cdt_v[loop]%256;
+    	sampk_temp[CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t)+loop*4+1]= (cdt_v[loop]/256)%256;
+    	sampk_temp[CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t)+loop*4+2]= ((cdt_v[loop]/256)/256)%256;
+    	sampk_temp[CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t)+loop*4+3]= (((cdt_v[loop]/256)/256)/256)%256;
+    }
     
     // Keep track each entry's sampling order
-    for (int32_t i = 0; i < CHUNK_SIZE; i++)
+    kmxGauss_label4:for (i = 0; i < CHUNK_SIZE; i++)
         sampg[i] = i << 16;
     // Append the CDT Gaussian indices (prefixed with a sentinel)
-    for (int32_t i = 0; i < CDT_ROWS; i++)
+    kmxGauss_label5:for (i = 0; i < CDT_ROWS; i++)
         sampg[CHUNK_SIZE + i] = 0xFFFF0000L ^ i;
 
     // Constant-time sorting according to the uniformly random sorting key
+    kmxGauss_label6:for(loop=0;loop<(CHUNK_SIZE + CDT_ROWS)*CDT_COLS;loop++) {
+    	sampk[loop] = sampk_temp[loop*4+3]*256*256*256+sampk_temp[loop*4+2]*256*256+sampk_temp[loop*4+1]*256+sampk_temp[loop*4];
+    }
+#else
+    // Fill each entry's sorting key with uniformly random data, and append the CDT values
+    cSHAKE(sampk, CHUNK_SIZE*CDT_COLS*sizeof(sdigit_t), (int16_t)nonce, seed, CRYPTO_RANDOMBYTES);
+    memcpy(sampk + CHUNK_SIZE*CDT_COLS, cdt_v, CDT_ROWS*CDT_COLS*sizeof(sdigit_t));
+
+    // Keep track each entry's sampling order
+    for (i = 0; i < CHUNK_SIZE; i++)
+        sampg[i] = i << 16;
+    // Append the CDT Gaussian indices (prefixed with a sentinel)
+    for (i = 0; i < CDT_ROWS; i++)
+        sampg[CHUNK_SIZE + i] = 0xFFFF0000L ^ i;
+
+    // Constant-time sorting according to the uniformly random sorting key
+#endif
     knuthMergeExchangeKG(sampk, sampg, CHUNK_SIZE + CDT_ROWS);
-    
     // Set each entry's Gaussian index
     int32_t prev_inx = 0;
-    for (int i = 0; i < CHUNK_SIZE + CDT_ROWS; i++) {
+    kmxGauss_label7:for (i = 0; i < CHUNK_SIZE + CDT_ROWS; i++) {
         int32_t curr_inx = sampg[i] & 0xFFFFL;
         // prev_inx < curr_inx => prev_inx - curr_inx < 0 => (prev_inx - curr_inx) >> 31 = 0xF...F else 0x0...0
         prev_inx ^= (curr_inx ^ prev_inx) & ((prev_inx - curr_inx) >> (RADIX32-1));
@@ -221,9 +248,10 @@ static void kmxGauss(int32_t z[/*CHUNK_SIZE*/], const unsigned char *seed, int n
     knuthMergeExchangeG(sampg, CHUNK_SIZE + CDT_ROWS);
     
     // Discard the trailing entries (corresponding to the CDT) and sample the signs
-    for (int i = 0; i < CHUNK_SIZE; i++) {
+    kmxGauss_label8:for (i = 0; i < CHUNK_SIZE; i++) {
         z[i] = (sampg[i] << (RADIX32-16)) >> (RADIX32-16);
     }
+
 }
 
 

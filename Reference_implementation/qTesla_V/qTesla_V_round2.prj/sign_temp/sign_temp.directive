@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile name="sha3/fips202.c">
+    <directive functionName="keccak_absorb" label=" " functionLabel=" ">
+      <pragma name="ALLOCATION">
+        <option name="instances" value="keccak_absorb" positionalBoolean="4"/>
+        <option name="limit" value="1"/>
+        <option name="function" value=" " positionalBoolean="type"/>
+      </pragma>
+      <pragma name="INLINE"/>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>

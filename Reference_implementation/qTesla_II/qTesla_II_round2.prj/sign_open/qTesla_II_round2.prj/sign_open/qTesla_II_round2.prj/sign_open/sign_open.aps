@@ -1,0 +1,22 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="sign_open"/>
+    </name>
+    <project>
+        <value string="qTesla_II_round2.prj"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7a200t:fbg676:-2"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/artix7/artix7" name="DefaultPlatform"/>
+        <library value="xilinx/artix7/artix7_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="15" default="false"/>
+    </clockList>
+    <config>
+        <config_interface expose_global="1" m_axi_offset="off" register_io="off"/>
+    </config>
+</AutoPilot:solution>
+
