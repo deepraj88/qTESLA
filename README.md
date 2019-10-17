@@ -2,7 +2,7 @@
 
 ### Open Project
 * Download the github project in the local repository.
-* Open the project. The project name ends with (.prj). One such path for project is: CRYSTALS-Dilithium/Optimized_Implementation/Dilithium_weak/dilithium_weak.prj/
+* Open the project. The project name ends with (.prj). 
  ![open_project](./Hw_Implementation_Docs/open_project.png)
 * The project has different solutions. Each solution has unique target device, clock period, cosimultation settings, and configuration settings.
  ![solution_names](./Hw_Implementation_Docs/solution_names.png)
