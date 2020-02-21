@@ -11,3 +11,7 @@ set_directive_allocation -limit 1 -type function "cshake128_simple_absorb" cshak
 set_directive_inline "cshake128_simple_absorb"
 set_directive_allocation -limit 1 -type function "shake128" shake128
 set_directive_inline "shake128"
+set_directive_inline "load64"
+set_directive_inline "store64"
+set_directive_unroll -factor 1 "sparse_mul32/sparse_mul32_label1"
+set_directive_pipeline "sparse_mul32/sparse_mul32_label1"

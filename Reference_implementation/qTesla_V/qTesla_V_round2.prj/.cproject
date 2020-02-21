@@ -51,6 +51,8 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.2041939169" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
+                                    <listOptionValue builtIn="false" value="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_V"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx2018/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx2018/Vivado/2018.3/include"/>
@@ -84,6 +86,8 @@
                                 <option id="gnu.c.compiler.exe.debug.option.debugging.level.535949249" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1614533731" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_V"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx2018/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
@@ -249,6 +253,8 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.745649228" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
+                                    <listOptionValue builtIn="false" value="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_V"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx2018/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx2018/Vivado/2018.3/include"/>
@@ -272,6 +278,8 @@
                                 <option id="gnu.c.compiler.exe.release.option.debugging.level.634152051" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.661157106" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_V"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx2018/Vivado/2018.3/lnx64/tools/auto_cc/include"/>
                                     									

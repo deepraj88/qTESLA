@@ -1,9 +1,9 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 34
+set ID 33
 set hasByteEnable 0
-set MemName KeccakF1600_StateeOg
+set MemName KeccakF1600_StatePer_KeccakF_RoundConstan
 set CoreName ap_simcore_mem
 set PortList { 1 1 }
 set DataWd 64
@@ -94,7 +94,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 35 \
+    id 34 \
     name state \
     reset_level 1 \
     sync_rst true \

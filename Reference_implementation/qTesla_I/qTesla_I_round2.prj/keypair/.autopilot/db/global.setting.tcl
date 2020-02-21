@@ -40,7 +40,7 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7a200t:fbg676:-2
-set SourceFiles {sc {} c {../../sign.c ../../sample.c ../../tests/rng.c ../../poly.c ../../pack.c ../../gauss.c ../../sha3/fips202.c ../../consts.c ../../tests/aes.c}}
+set SourceFiles {sc {} c {../../tests/aes.c ../../consts.c ../../sha3/fips202.c ../../gauss.c ../../pack.c ../../poly.c ../../tests/rng.c ../../sample.c ../../sign.c}}
 set SourceFlags {sc {} c {{} {} {} {} {} {} {} {} {}}}
 set DirectiveFile /home/dss545/vivado_hls/qtesla/Reference_implementation/qTesla_I/qTesla_I_round2.prj/keypair/keypair.directive
 set TBFiles {verilog ../../newtest_sign.c bc ../../newtest_sign.c vhdl ../../newtest_sign.c sc ../../newtest_sign.c cas ../../newtest_sign.c c {}}

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 224
+set ID 352
 set hasByteEnable 0
 set MemName crypto_sign_y_ntt
 set CoreName ap_simcore_mem
@@ -86,7 +86,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 225
+set ID 353
 set hasByteEnable 0
 set MemName crypto_sign_t
 set CoreName ap_simcore_mem
@@ -171,7 +171,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 226
+set ID 354
 set hasByteEnable 0
 set MemName crypto_sign_c
 set CoreName ap_simcore_mem
@@ -256,9 +256,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 227
+set ID 355
 set hasByteEnable 0
-set MemName crypto_sign_randovdy
+set MemName crypto_sign_randomness_input
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -341,7 +341,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 228
+set ID 356
 set hasByteEnable 0
 set MemName crypto_sign_seeds
 set CoreName ap_simcore_mem
@@ -426,9 +426,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 229
+set ID 357
 set hasByteEnable 0
-set MemName crypto_sign_pos_lwdI
+set MemName crypto_sign_pos_list
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 9
@@ -511,9 +511,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 230
+set ID 358
 set hasByteEnable 0
-set MemName crypto_sign_sign_xdS
+set MemName crypto_sign_sign_list
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 2
@@ -596,7 +596,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 231
+set ID 359
 set hasByteEnable 0
 set MemName crypto_sign_s
 set CoreName ap_simcore_mem
@@ -681,7 +681,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 232
+set ID 360
 set hasByteEnable 0
 set MemName crypto_sign_y
 set CoreName ap_simcore_mem
@@ -766,7 +766,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 233
+set ID 361
 set hasByteEnable 0
 set MemName crypto_sign_v
 set CoreName ap_simcore_mem
@@ -851,7 +851,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 234
+set ID 362
 set hasByteEnable 0
 set MemName crypto_sign_z
 set CoreName ap_simcore_mem
@@ -936,7 +936,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 235
+set ID 363
 set hasByteEnable 0
 set MemName crypto_sign_a
 set CoreName ap_simcore_mem
@@ -1031,7 +1031,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 236 \
+    id 364 \
     name sm \
     reset_level 1 \
     sync_rst true \
@@ -1050,7 +1050,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 237 \
+    id 365 \
     name smlen \
     reset_level 1 \
     sync_rst true \
@@ -1069,7 +1069,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 238 \
+    id 366 \
     name m \
     reset_level 1 \
     sync_rst true \
@@ -1088,7 +1088,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 240 \
+    id 368 \
     name sk \
     reset_level 1 \
     sync_rst true \
@@ -1107,7 +1107,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 241 \
+    id 369 \
     name DRBG_ctx_V \
     reset_level 1 \
     sync_rst true \
@@ -1126,7 +1126,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 242 \
+    id 370 \
     name DRBG_ctx_Key \
     reset_level 1 \
     sync_rst true \
@@ -1145,7 +1145,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 244 \
+    id 372 \
     name zeta \
     reset_level 1 \
     sync_rst true \
@@ -1164,7 +1164,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 245 \
+    id 373 \
     name zetainv \
     reset_level 1 \
     sync_rst true \
@@ -1182,7 +1182,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 239 \
+    id 367 \
     name mlen \
     type other \
     dir I \
@@ -1197,7 +1197,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 243 \
+    id 371 \
     name DRBG_ctx_reseed_counter \
     type other \
     dir IO \

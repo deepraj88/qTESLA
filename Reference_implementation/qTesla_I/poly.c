@@ -67,7 +67,7 @@ void ntt(poly a, const poly w)
     int jFirst, j=0;
     for (jFirst=0; jFirst<PARAM_N; jFirst=j+NumoProblems) {
       sdigit_t W = (sdigit_t)w[jTwiddle++];
-      for (j=jFirst; j<jFirst+NumoProblems; j++) {
+      ntt_label0:for (j=jFirst; j<jFirst+NumoProblems; j++) {
         int32_t temp = reduce((int64_t)W * a[j+NumoProblems]);
         a[j + NumoProblems] = a[j] - temp;
         a[j] = temp + a[j];

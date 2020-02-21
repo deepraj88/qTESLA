@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 9
-set name crypto_sign_open_dEe
+set name crypto_sign_open_urem_12ns_9ns_12_16_seq_1
 set corename simcore_urem_seq
 set op urem
 set stage_num 16
@@ -95,7 +95,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_div, check your pla
 
 
 set id 10
-set name crypto_sign_open_eOg
+set name crypto_sign_open_mul_mul_14ns_12ns_26_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -173,7 +173,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 # Memory (RAM/ROM)  definition:
 set ID 13
 set hasByteEnable 0
-set MemName cshake128_simple_t
+set MemName cshake128_simple_t_2
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
 set DataWd 8
@@ -343,7 +343,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 15
 set hasByteEnable 0
-set MemName cshake128_simple_cud
+set MemName cshake128_simple_t
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8

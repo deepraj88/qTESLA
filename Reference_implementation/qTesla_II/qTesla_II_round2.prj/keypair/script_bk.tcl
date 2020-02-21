@@ -13,11 +13,11 @@ add_files poly.c
 add_files tests/rng.c
 add_files sample.c
 add_files sign.c
-add_files -tb newtest_sign.c -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb newtest_sign.c -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
 open_solution "keypair"
 set_part {xc7a200tfbg676-2}
 create_clock -period 15 -name default
-config_interface  -expose_global  -m_axi_offset off -register_io off 
+config_interface -clock_enable=0 -expose_global -m_axi_addr64=0 -m_axi_offset off -register_io off -trim_dangling_port=0
 source "./qTesla_II_round2.prj/keypair/directives_bk.tcl"
 #csim_design
 csynth_design

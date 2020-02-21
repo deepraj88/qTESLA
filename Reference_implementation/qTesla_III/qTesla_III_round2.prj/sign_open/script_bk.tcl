@@ -14,12 +14,12 @@ add_files gauss.c
 add_files sha3/fips202.c
 add_files consts.c
 add_files tests/aes.c
-add_files -tb newtest_sign.c -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
+add_files -tb newtest_sign.c -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas"
 open_solution "sign_open"
 set_part {xc7a200tfbg676-2} -tool vivado
 create_clock -period 15 -name default
-config_interface  -expose_global -m_axi_offset off -register_io off
-source "./qTesla_III_round2.prj/sign_open/directives_bk.tcl"
+config_interface -clock_enable=0 -expose_global -m_axi_offset off -register_io off
+#source "./qTesla_III_round2.prj/sign_open/directives_bk.tcl"
 #csim_design
 csynth_design
 cosim_design

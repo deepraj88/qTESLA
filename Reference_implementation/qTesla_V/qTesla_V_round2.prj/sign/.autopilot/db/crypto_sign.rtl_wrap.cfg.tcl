@@ -3,8 +3,8 @@ set moduleName "crypto_sign"
 set moduleIsExternC "0"
 set rawDecl ""
 set globalVariable ""
-set PortName6 "zetainv"
-set BitWidth6 "65536"
+set PortName6 "DRBG_ctx"
+set BitWidth6 "416"
 set ArrayOpt6 ""
 set Const6 "0"
 set Volatile6 "0"
@@ -12,83 +12,53 @@ set Pointer6 "0"
 set Reference6 "0"
 set Initializer6 ""
 set External6 0
-set Dims6 [list  2048]
+set Dims6 [list 0]
 set Interface6 "wire"
 set NameSpace6 [list ]
-set DataType6 "int"
+set structMem6 ""
+set PortName60 "Key"
+set BitWidth60 "256"
+set ArrayOpt60 ""
+set Const60 "0"
+set Volatile60 "0"
+set Pointer60 "0"
+set Reference60 "0"
+set Dims60 [list  32]
+set Interface60 "wire"
+set DataType60 "unsigned char"
+set Port60 [list $PortName60 $Interface60 $DataType60 $Pointer60 $Dims60 $Const60 $Volatile60 $ArrayOpt60]
+lappend structMem6 $Port60
+set PortName61 "V"
+set BitWidth61 "128"
+set ArrayOpt61 ""
+set Const61 "0"
+set Volatile61 "0"
+set Pointer61 "0"
+set Reference61 "0"
+set Dims61 [list  16]
+set Interface61 "wire"
+set DataType61 "unsigned char"
+set Port61 [list $PortName61 $Interface61 $DataType61 $Pointer61 $Dims61 $Const61 $Volatile61 $ArrayOpt61]
+lappend structMem6 $Port61
+set PortName62 "reseed_counter"
+set BitWidth62 "32"
+set ArrayOpt62 ""
+set Const62 "0"
+set Volatile62 "0"
+set Pointer62 "0"
+set Reference62 "0"
+set Dims62 [list 0]
+set Interface62 "wire"
+set DataType62 "int"
+set Port62 [list $PortName62 $Interface62 $DataType62 $Pointer62 $Dims62 $Const62 $Volatile62 $ArrayOpt62]
+lappend structMem6 $Port62
+set structParameter6 [list ]
+set structArgument6 [list ]
+set NameSpace6 [list ]
+set structIsPacked6 "0"
+set DataType6 [list "AES256_CTR_DRBG_struct" "struct " $structMem6 0 0 $structParameter6 $structArgument6 $NameSpace6 $structIsPacked6]
 set Port6 [list $PortName6 $Interface6 $DataType6 $Pointer6 $Dims6 $Const6 $Volatile6 $ArrayOpt6 $Initializer6 $External6 $NameSpace6]
 lappend globalVariable $Port6
-set PortName7 "zeta"
-set BitWidth7 "65536"
-set ArrayOpt7 ""
-set Const7 "0"
-set Volatile7 "0"
-set Pointer7 "0"
-set Reference7 "0"
-set Initializer7 ""
-set External7 0
-set Dims7 [list  2048]
-set Interface7 "wire"
-set NameSpace7 [list ]
-set DataType7 "int"
-set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7 $Initializer7 $External7 $NameSpace7]
-lappend globalVariable $Port7
-set PortName8 "DRBG_ctx"
-set BitWidth8 "416"
-set ArrayOpt8 ""
-set Const8 "0"
-set Volatile8 "0"
-set Pointer8 "0"
-set Reference8 "0"
-set Initializer8 ""
-set External8 0
-set Dims8 [list 0]
-set Interface8 "wire"
-set NameSpace8 [list ]
-set structMem8 ""
-set PortName80 "Key"
-set BitWidth80 "256"
-set ArrayOpt80 ""
-set Const80 "0"
-set Volatile80 "0"
-set Pointer80 "0"
-set Reference80 "0"
-set Dims80 [list  32]
-set Interface80 "wire"
-set DataType80 "unsigned char"
-set Port80 [list $PortName80 $Interface80 $DataType80 $Pointer80 $Dims80 $Const80 $Volatile80 $ArrayOpt80]
-lappend structMem8 $Port80
-set PortName81 "V"
-set BitWidth81 "128"
-set ArrayOpt81 ""
-set Const81 "0"
-set Volatile81 "0"
-set Pointer81 "0"
-set Reference81 "0"
-set Dims81 [list  16]
-set Interface81 "wire"
-set DataType81 "unsigned char"
-set Port81 [list $PortName81 $Interface81 $DataType81 $Pointer81 $Dims81 $Const81 $Volatile81 $ArrayOpt81]
-lappend structMem8 $Port81
-set PortName82 "reseed_counter"
-set BitWidth82 "32"
-set ArrayOpt82 ""
-set Const82 "0"
-set Volatile82 "0"
-set Pointer82 "0"
-set Reference82 "0"
-set Dims82 [list 0]
-set Interface82 "wire"
-set DataType82 "int"
-set Port82 [list $PortName82 $Interface82 $DataType82 $Pointer82 $Dims82 $Const82 $Volatile82 $ArrayOpt82]
-lappend structMem8 $Port82
-set structParameter8 [list ]
-set structArgument8 [list ]
-set NameSpace8 [list ]
-set structIsPacked8 "0"
-set DataType8 [list "AES256_CTR_DRBG_struct" "struct " $structMem8 0 0 $structParameter8 $structArgument8 $NameSpace8 $structIsPacked8]
-set Port8 [list $PortName8 $Interface8 $DataType8 $Pointer8 $Dims8 $Const8 $Volatile8 $ArrayOpt8 $Initializer8 $External8 $NameSpace8]
-lappend globalVariable $Port8
 set PortList ""
 set PortName1 "sm"
 set BitWidth1 "64"

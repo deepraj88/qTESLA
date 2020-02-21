@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 37
+set ID 36
 set hasByteEnable 0
 set MemName cshake256_simple_s
 set CoreName ap_simcore_mem
@@ -86,9 +86,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 38
+set ID 37
 set hasByteEnable 0
-set MemName cshake256_simple_g8j
+set MemName cshake256_simple_x_assign
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -181,7 +181,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 39 \
+    id 38 \
     name output_r \
     reset_level 1 \
     sync_rst true \
@@ -200,7 +200,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 41 \
+    id 40 \
     name in_r \
     reset_level 1 \
     sync_rst true \
@@ -218,7 +218,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 40 \
+    id 39 \
     name cstm \
     type other \
     dir I \
@@ -233,7 +233,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 42 \
+    id 41 \
     name in_offset \
     type other \
     dir I \

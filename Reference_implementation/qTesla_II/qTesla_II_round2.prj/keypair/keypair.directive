@@ -32,7 +32,7 @@
         </directive>
         <directive functionName="nttInit" label="nttInit_label0" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="knuthMergeExchangeG" label="" functionLabel="">
@@ -47,7 +47,7 @@
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label3" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label3" functionLabel="">
@@ -55,7 +55,7 @@
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label4" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label4" functionLabel="">
@@ -63,7 +63,7 @@
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label5" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label5" functionLabel="">
@@ -71,7 +71,7 @@
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label6" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label6" functionLabel="">
@@ -79,7 +79,7 @@
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label7" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label7" functionLabel="">
@@ -87,7 +87,7 @@
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label8" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="kmxGauss" label="kmxGauss_label8" functionLabel="">
@@ -95,7 +95,7 @@
         </directive>
         <directive functionName="check_ES" label="check_ES_label0" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="check_ES" label="check_ES_label0" functionLabel="">
@@ -103,7 +103,7 @@
         </directive>
         <directive functionName="NTT" label="NTT_label1" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="NTT" label="NTT_label1" functionLabel="">
@@ -111,7 +111,7 @@
         </directive>
         <directive functionName="invNTT" label="invNTT_label2" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="invNTT" label="invNTT_label2" functionLabel="">

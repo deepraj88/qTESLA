@@ -1,9 +1,9 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 56
+set ID 310
 set hasByteEnable 0
-set MemName crypto_sign_open_mb6
+set MemName crypto_sign_open_y_ntt
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 32
@@ -86,7 +86,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 57
+set ID 311
 set hasByteEnable 0
 set MemName crypto_sign_open_t
 set CoreName ap_simcore_mem
@@ -171,7 +171,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 58
+set ID 312
 set hasByteEnable 0
 set MemName crypto_sign_open_c
 set CoreName ap_simcore_mem
@@ -256,7 +256,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 59
+set ID 313
 set hasByteEnable 0
 set MemName crypto_sign_open_hm
 set CoreName ap_simcore_mem
@@ -341,9 +341,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 60
+set ID 314
 set hasByteEnable 0
-set MemName crypto_sign_open_qcK
+set MemName crypto_sign_open_pos_list
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 9
@@ -426,9 +426,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 61
+set ID 315
 set hasByteEnable 0
-set MemName crypto_sign_open_rcU
+set MemName crypto_sign_open_sign_list
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 2
@@ -511,9 +511,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 62
+set ID 316
 set hasByteEnable 0
-set MemName crypto_sign_open_sc4
+set MemName crypto_sign_open_pk_t
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 23
@@ -596,7 +596,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 63
+set ID 317
 set hasByteEnable 0
 set MemName crypto_sign_open_w
 set CoreName ap_simcore_mem
@@ -681,7 +681,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 64
+set ID 318
 set hasByteEnable 0
 set MemName crypto_sign_open_z
 set CoreName ap_simcore_mem
@@ -766,7 +766,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 65
+set ID 319
 set hasByteEnable 0
 set MemName crypto_sign_open_a
 set CoreName ap_simcore_mem
@@ -861,7 +861,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 66 \
+    id 320 \
     name m \
     reset_level 1 \
     sync_rst true \
@@ -880,7 +880,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 67 \
+    id 321 \
     name mlen \
     reset_level 1 \
     sync_rst true \
@@ -899,7 +899,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 68 \
+    id 322 \
     name sm \
     reset_level 1 \
     sync_rst true \
@@ -918,7 +918,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 70 \
+    id 324 \
     name pk \
     reset_level 1 \
     sync_rst true \
@@ -937,7 +937,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 71 \
+    id 325 \
     name zeta \
     reset_level 1 \
     sync_rst true \
@@ -956,7 +956,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 72 \
+    id 326 \
     name zetainv \
     reset_level 1 \
     sync_rst true \
@@ -974,7 +974,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 69 \
+    id 323 \
     name smlen \
     type other \
     dir I \

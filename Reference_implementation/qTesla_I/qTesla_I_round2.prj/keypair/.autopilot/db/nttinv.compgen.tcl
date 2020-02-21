@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 63
+set id 64
 set name crypto_sign_keypair_mac_muladd_24s_11s_32s_32_1_1
 set corename simcore_mac
 set op mac
@@ -93,14 +93,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 65 \
+    id 66 \
     name a \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename a \
     op interface \
-    ports { a_address0 { O 9 vector } a_ce0 { O 1 bit } a_q0 { I 32 vector } a_address1 { O 9 vector } a_ce1 { O 1 bit } a_we1 { O 1 bit } a_d1 { O 32 vector } a_q1 { I 32 vector } } \
+    ports { a_address0 { O 9 vector } a_ce0 { O 1 bit } a_we0 { O 1 bit } a_d0 { O 32 vector } a_q0 { I 32 vector } a_address1 { O 9 vector } a_ce1 { O 1 bit } a_we1 { O 1 bit } a_d1 { O 32 vector } a_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'a'"
@@ -112,7 +112,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 66 \
+    id 67 \
     name zetainv \
     reset_level 1 \
     sync_rst true \

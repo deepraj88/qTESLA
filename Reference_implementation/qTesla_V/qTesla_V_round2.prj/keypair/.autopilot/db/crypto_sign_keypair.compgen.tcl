@@ -1,94 +1,9 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 81
+set ID 76
 set hasByteEnable 0
-set MemName crypto_sign_keypakbM
-set CoreName ap_simcore_mem
-set PortList { 2 3 }
-set DataWd 32
-set AddrRange 2048
-set AddrWd 11
-set impl_style block
-set TrueReset 0
-set HasInitializer 0
-set IsROM 0
-set ROMData {}
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.772
-set ClkPeriod 15
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName RAM
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 82
-set hasByteEnable 0
-set MemName crypto_sign_keypaocq
+set MemName crypto_sign_keypair_randomness
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -171,9 +86,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 83
+set ID 77
 set hasByteEnable 0
-set MemName crypto_sign_keypapcA
+set MemName crypto_sign_keypair_randomness_extended
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -256,9 +171,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 84
+set ID 78
 set hasByteEnable 0
-set MemName crypto_sign_keypaqcK
+set MemName crypto_sign_keypair_s
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 16
@@ -341,9 +256,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 85
+set ID 79
 set hasByteEnable 0
-set MemName crypto_sign_keypasc4
+set MemName crypto_sign_keypair_a
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 25
@@ -436,7 +351,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 86 \
+    id 80 \
     name pk \
     reset_level 1 \
     sync_rst true \
@@ -455,7 +370,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 87 \
+    id 81 \
     name sk \
     reset_level 1 \
     sync_rst true \
@@ -469,97 +384,6 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 }
 }
 
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 88 \
-    name DRBG_ctx_V \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename DRBG_ctx_V \
-    op interface \
-    ports { DRBG_ctx_V_address0 { O 4 vector } DRBG_ctx_V_ce0 { O 1 bit } DRBG_ctx_V_we0 { O 1 bit } DRBG_ctx_V_d0 { O 8 vector } DRBG_ctx_V_q0 { I 8 vector } DRBG_ctx_V_address1 { O 4 vector } DRBG_ctx_V_ce1 { O 1 bit } DRBG_ctx_V_q1 { I 8 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'DRBG_ctx_V'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 89 \
-    name DRBG_ctx_Key \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename DRBG_ctx_Key \
-    op interface \
-    ports { DRBG_ctx_Key_address0 { O 5 vector } DRBG_ctx_Key_ce0 { O 1 bit } DRBG_ctx_Key_we0 { O 1 bit } DRBG_ctx_Key_d0 { O 8 vector } DRBG_ctx_Key_q0 { I 8 vector } DRBG_ctx_Key_address1 { O 5 vector } DRBG_ctx_Key_ce1 { O 1 bit } DRBG_ctx_Key_q1 { I 8 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'DRBG_ctx_Key'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 91 \
-    name zeta \
-    reset_level 1 \
-    sync_rst true \
-    dir I \
-    corename zeta \
-    op interface \
-    ports { zeta_address0 { O 11 vector } zeta_ce0 { O 1 bit } zeta_q0 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'zeta'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 92 \
-    name zetainv \
-    reset_level 1 \
-    sync_rst true \
-    dir I \
-    corename zetainv \
-    op interface \
-    ports { zetainv_address0 { O 11 vector } zetainv_ce0 { O 1 bit } zetainv_q0 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'zetainv'"
-}
-}
-
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 90 \
-    name DRBG_ctx_reseed_counter \
-    type other \
-    dir IO \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_DRBG_ctx_reseed_counter \
-    op interface \
-    ports { DRBG_ctx_reseed_counter_i { I 32 vector } DRBG_ctx_reseed_counter_o { O 32 vector } DRBG_ctx_reseed_counter_o_ap_vld { O 1 bit } } \
-} "
-}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {

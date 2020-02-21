@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="qTesla_I_round2.prj" top="crypto_sign_keypair">
+<project xmlns="com.autoesl.autopilot.project" name="qTesla_I_round2.prj" top="crypto_sign_open">
     <includePaths/>
     <libraryPaths/>
     <Simulation argv="">
@@ -17,7 +17,7 @@
         <file name="tests/aes.c" sc="0" tb="false" cflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
-        <solution name="sign_open" status="inactive"/>
+        <solution name="sign_open" status="active"/>
         <solution name="sign" status="inactive"/>
         <solution name="sign_unroll" status="inactive"/>
         <solution name="sign_pipeline" status="inactive"/>
@@ -25,7 +25,7 @@
         <solution name="sign_open_pipeline" status="inactive"/>
         <solution name="sign_temp" status="inactive"/>
         <solution name="sign_temp2" status="inactive"/>
-        <solution name="keypair" status="active"/>
+        <solution name="keypair" status="inactive"/>
     </solutions>
 </project>
 

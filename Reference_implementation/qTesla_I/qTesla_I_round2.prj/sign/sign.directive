@@ -48,7 +48,7 @@
         </directive>
         <directive functionName="sparse_mul16" label="sparse_mul16_label2" functionLabel="">
             <pragma name="UNROLL">
-                <option name="factor" value="64"/>
+                <option name="factor" value="128"/>
             </pragma>
         </directive>
         <directive functionName="sparse_mul16" label="sparse_mul16_label2" functionLabel="">

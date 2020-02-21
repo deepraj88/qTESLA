@@ -3,7 +3,7 @@
 # Memory (RAM/ROM)  definition:
 set ID 30
 set hasByteEnable 0
-set MemName KeccakF1600_StateeOg
+set MemName KeccakF1600_StatePer_KeccakF_RoundConstan
 set CoreName ap_simcore_mem
 set PortList { 1 1 }
 set DataWd 64

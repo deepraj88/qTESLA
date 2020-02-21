@@ -1,21 +1,21 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 86
-set name crypto_sign_mac_mpcA
+set id 85
+set name crypto_sign_mac_mulsub_2s_9s_32ns_32_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
 set max_latency -1
 set registered_input 1
-set in0_width 9
+set in0_width 2
 set in0_signed 1
-set in1_width 2
+set in1_width 9
 set in1_signed 1
 set in2_width 32
 set in2_signed 0
 set out_width 32
 set exp i0*i1+i2
-set arg_lists {i0 {9 1 +} i1 {2 1 +} m {18 1 -} i2 {32 0 +} p {32 1 +} c_reg {1} rnd {0} acc {0} }
+set arg_lists {i0 {2 1 +} i1 {9 1 +} m {18 1 -} i2 {32 0 +} p {32 1 +} c_reg {1} rnd {0} acc {0} }
 set TrueReset 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
@@ -82,22 +82,22 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 }
 
 
-set id 87
-set name crypto_sign_mac_mqcK
+set id 86
+set name crypto_sign_mac_muladd_2s_9s_32ns_32_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
 set max_latency -1
 set registered_input 1
-set in0_width 9
+set in0_width 2
 set in0_signed 1
-set in1_width 2
+set in1_width 9
 set in1_signed 1
 set in2_width 32
 set in2_signed 0
 set out_width 32
 set exp i0*i1+i2
-set arg_lists {i0 {9 1 +} i1 {2 1 +} m {18 1 +} i2 {32 0 +} p {32 1 +} c_reg {1} rnd {0} acc {0} }
+set arg_lists {i0 {2 1 +} i1 {9 1 +} m {18 1 +} i2 {32 0 +} p {32 1 +} c_reg {1} rnd {0} acc {0} }
 set TrueReset 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
@@ -175,7 +175,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 216 \
+    id 119 \
     name prod \
     reset_level 1 \
     sync_rst true \
@@ -194,7 +194,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 217 \
+    id 120 \
     name s \
     reset_level 1 \
     sync_rst true \
@@ -213,7 +213,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 218 \
+    id 121 \
     name pos_list \
     reset_level 1 \
     sync_rst true \
@@ -232,7 +232,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 219 \
+    id 122 \
     name sign_list \
     reset_level 1 \
     sync_rst true \

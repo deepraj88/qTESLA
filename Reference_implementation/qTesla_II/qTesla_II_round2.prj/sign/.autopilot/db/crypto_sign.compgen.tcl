@@ -261,7 +261,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 112
 set hasByteEnable 0
-set MemName crypto_sign_psi_pqcK
+set MemName crypto_sign_psi_phi_tab
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 32
@@ -517,7 +517,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 115
 set hasByteEnable 0
-set MemName crypto_sign_randotde
+set MemName crypto_sign_randomness_input
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -687,7 +687,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 117
 set hasByteEnable 0
-set MemName crypto_sign_pos_ludo
+set MemName crypto_sign_pos_list
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 10
@@ -772,7 +772,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 118
 set hasByteEnable 0
-set MemName crypto_sign_sign_vdy
+set MemName crypto_sign_sign_list
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 2

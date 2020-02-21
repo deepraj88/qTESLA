@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 36
-set name crypto_sign_urem_g8j
+set name crypto_sign_urem_12ns_9ns_12_16_seq_1
 set corename simcore_urem_seq
 set op urem
 set stage_num 16
@@ -95,7 +95,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_div, check your pla
 
 
 set id 37
-set name crypto_sign_mul_mhbi
+set name crypto_sign_mul_mul_14ns_12ns_26_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -173,7 +173,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 # Memory (RAM/ROM)  definition:
 set ID 40
 set hasByteEnable 0
-set MemName cshake128_simple_fYi
+set MemName cshake128_simple_t_2
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
 set DataWd 8

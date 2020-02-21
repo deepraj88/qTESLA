@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 66
-set name crypto_sign_keypafYi
+set name crypto_sign_keypair_urem_13ns_9ns_13_17_seq_1
 set corename simcore_urem_seq
 set op urem
 set stage_num 17
@@ -95,7 +95,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_div, check your pla
 
 
 set id 67
-set name crypto_sign_keypag8j
+set name crypto_sign_keypair_mul_mul_15ns_13ns_28_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1

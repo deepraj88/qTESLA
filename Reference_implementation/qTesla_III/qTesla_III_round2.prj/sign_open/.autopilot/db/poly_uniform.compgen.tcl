@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 20
-set name crypto_sign_open_fYi
+set id 27
+set name crypto_sign_open_mac_muladd_9ns_7ns_5s_16_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
@@ -82,8 +82,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 }
 
 
-set id 21
-set name crypto_sign_open_g8j
+set id 28
+set name crypto_sign_open_mul_mul_24ns_19ns_43_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -159,7 +159,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 # Memory (RAM/ROM)  definition:
-set ID 27
+set ID 34
 set hasByteEnable 0
 set MemName poly_uniform_buf
 set CoreName ap_simcore_mem
@@ -254,7 +254,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 28 \
+    id 35 \
     name a \
     reset_level 1 \
     sync_rst true \
@@ -273,7 +273,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 29 \
+    id 36 \
     name seed \
     reset_level 1 \
     sync_rst true \

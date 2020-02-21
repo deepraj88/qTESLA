@@ -19,4 +19,5 @@ set_directive_allocation -limit 1 -type function "NTT" NTT
 set_directive_inline "NTT"
 set_directive_allocation -limit 1 -type function "invNTT" invNTT
 set_directive_inline "invNTT"
-set_directive_unroll -factor 64 "nttInit/nttInit_label0"
+set_directive_unroll -factor 128 "nttInit/nttInit_label0"
+set_directive_pipeline "nttInit/nttInit_label0"

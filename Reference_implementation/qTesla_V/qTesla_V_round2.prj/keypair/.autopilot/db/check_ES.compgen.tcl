@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 54
+set ID 53
 set hasByteEnable 0
 set MemName check_ES_list
 set CoreName ap_simcore_mem
@@ -96,7 +96,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 55 \
+    id 54 \
     name p \
     reset_level 1 \
     sync_rst true \

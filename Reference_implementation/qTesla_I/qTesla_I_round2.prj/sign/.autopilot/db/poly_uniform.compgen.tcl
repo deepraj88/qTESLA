@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 47
-set name crypto_sign_mac_mibs
+set name crypto_sign_mac_muladd_9ns_6ns_5s_15_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
@@ -83,7 +83,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 set id 48
-set name crypto_sign_mul_mjbC
+set name crypto_sign_mul_mul_23ns_18ns_41_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1

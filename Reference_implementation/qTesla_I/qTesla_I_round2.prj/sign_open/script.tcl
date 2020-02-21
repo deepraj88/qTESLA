@@ -4,7 +4,7 @@
 ## Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project qTesla_I_round2.prj
-set_top crypto_sign_keypair
+set_top crypto_sign
 add_files tests/aes.c
 add_files consts.c
 add_files sha3/fips202.c

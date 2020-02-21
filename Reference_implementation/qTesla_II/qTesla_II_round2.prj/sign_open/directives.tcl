@@ -11,4 +11,7 @@ set_directive_allocation -limit 1 -type function "keccak_squeezeblocks" keccak_s
 set_directive_inline "keccak_squeezeblocks"
 set_directive_allocation -limit 1 -type function "shake128" shake128
 set_directive_inline "shake128"
-set_directive_unroll -factor 64 "nttInit/nttInit_label0"
+set_directive_unroll -factor 1 "nttInit/nttInit_label0"
+set_directive_pipeline "nttInit/nttInit_label0"
+set_directive_unroll -factor 1 "invNTT/invNTT_label2"
+set_directive_pipeline "invNTT/invNTT_label2"

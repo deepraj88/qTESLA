@@ -40,6 +40,20 @@
         <directive functionName="shake128" label="" functionLabel="">
             <pragma name="INLINE"/>
         </directive>
+        <directive functionName="load64" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="store64" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="sparse_mul32" label="sparse_mul32_label1" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="128"/>
+            </pragma>
+        </directive>
+        <directive functionName="sparse_mul32" label="sparse_mul32_label1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

@@ -3,7 +3,7 @@
 # Memory (RAM/ROM)  definition:
 set ID 89
 set hasByteEnable 0
-set MemName crypto_sign_keypalbW
+set MemName crypto_sign_keypair_y_ntt
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 32
@@ -88,7 +88,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 90
 set hasByteEnable 0
-set MemName crypto_sign_keypamb6
+set MemName crypto_sign_keypair_randomness
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -173,7 +173,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 91
 set hasByteEnable 0
-set MemName crypto_sign_keypancg
+set MemName crypto_sign_keypair_randomness_extended
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -258,7 +258,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 92
 set hasByteEnable 0
-set MemName crypto_sign_keypaocq
+set MemName crypto_sign_keypair_s
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
 set DataWd 16
@@ -343,7 +343,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 93
 set hasByteEnable 0
-set MemName crypto_sign_keypaqcK
+set MemName crypto_sign_keypair_a
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 24

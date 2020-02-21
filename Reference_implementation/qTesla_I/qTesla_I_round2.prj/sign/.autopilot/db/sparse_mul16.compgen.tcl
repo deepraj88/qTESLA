@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 87
-set name crypto_sign_mac_msc4
+set name crypto_sign_mac_mulsub_9s_2s_32ns_32_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
@@ -83,7 +83,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 set id 88
-set name crypto_sign_mac_mtde
+set name crypto_sign_mac_muladd_9s_2s_32ns_32_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
@@ -175,7 +175,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 217 \
+    id 345 \
     name prod \
     reset_level 1 \
     sync_rst true \
@@ -194,7 +194,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 218 \
+    id 346 \
     name s \
     reset_level 1 \
     sync_rst true \
@@ -213,7 +213,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 219 \
+    id 347 \
     name pos_list \
     reset_level 1 \
     sync_rst true \
@@ -232,7 +232,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 220 \
+    id 348 \
     name sign_list \
     reset_level 1 \
     sync_rst true \

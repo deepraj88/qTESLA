@@ -23,9 +23,17 @@
     <clock default="false" name="default" period="15"/>
   </clockList>
   <config>
-            
+                            
+    
+    
+    
+    
     <schedule model="crypto_sign_open"/>
-        
+                        
+  
+  
+  
+  
   </config>
   <UIConfigurations>
     <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 74
-set name crypto_sign_keypakbM
+set name crypto_sign_keypair_mac_muladd_25s_10s_32s_32_1_1
 set corename simcore_mac
 set op mac
 set stage_num 1
